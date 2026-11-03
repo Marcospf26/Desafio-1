@@ -38,6 +38,14 @@ public class Produto {
         return this.categoria;
     }
 
+    public void setCategoria(Categoria categoria){
+        this.categoria = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Id: %d  Nome: %s  Preco: %.2f Categoria %s", this.id, this.nome, this.preco, this.categoria);
+    }
 
 
 

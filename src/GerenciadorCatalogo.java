@@ -13,6 +13,10 @@ public class GerenciadorCatalogo {
         return false;
     }
 
+    public void adicioanrCategoria(Categoria categoria) {
+        categorias.add(categoria);
+    }
+
 
     public Produto buscarProdutoId(int id) {
         for(Produto prods: produtos){
@@ -42,9 +46,9 @@ public class GerenciadorCatalogo {
         }
     }
 
-    public boolean buscarProdutoPorCategoria(Categoria categoria){
+    public boolean buscarProdutoPorCategoria(int idCategoria){
         for(Produto prods : produtos) {
-            if(prods.getCategoria() == categoria) {
+            if(prods.getCategoria().getId() == idCategoria) {
                 System.out.println(prods);
                 return true;
             }
@@ -52,7 +56,28 @@ public class GerenciadorCatalogo {
         }
         return false;
     }
-    
+
+    public Categoria buscarCategoriaNaHashSet(int id) {
+        for(Categoria cats: categorias) {
+            if(cats.getId() == id)
+            {
+                return cats;
+            }
+        }
+        return null;
+    }
+
+    public boolean alterarCategoriaDoProduto(int idProduto, int idCategoria) {
+        Categoria cats = buscarCategoriaNaHashSet(idCategoria);
+        for(Produto prods: produtos){
+            if(prods.getId() == idProduto) {
+                prods.setCategoria(cats);
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
 

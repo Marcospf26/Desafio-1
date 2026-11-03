@@ -1,10 +1,11 @@
 public class Categoria {
+    public static int proximoIdCat = 1;
 
     private int id;
     private String nome;
 
-    public Categoria (int id, String nome) {
-        this.id = id;
+    public Categoria (String nome) {
+        this.id = proximoIdCat++;
         this.nome = nome;
     }
 
@@ -19,4 +20,11 @@ public class Categoria {
     public String getNome() {
         return this.nome;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Id: %d  Nome: %s", this.id, this.nome);
+    }
+
+
 }
