@@ -13,6 +13,10 @@ public class Produto {
         this.categoria = categoria;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -33,6 +37,7 @@ public class Produto {
     public Categoria getCategoria(){
         return this.categoria;
     }
+
 
 
 

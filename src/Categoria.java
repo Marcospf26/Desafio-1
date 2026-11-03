@@ -11,4 +11,12 @@ public class Categoria {
     public void setNomeCat(String nome) {
         this.nome = nome;
     }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
 }
